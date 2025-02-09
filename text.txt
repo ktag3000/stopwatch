@@ -1,4 +1,0 @@
-IDEAS
-1. Multiple stop watches
-   a. Button to click to create more
-   b. Reset back to default for all

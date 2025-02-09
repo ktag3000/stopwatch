@@ -3,46 +3,51 @@
   padding: 0;
   margin: 0;
   color: white;
+  /*
+   TODO 
+   add font 
+   */
 }
 
-.container {
+body {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   height: 100vh;
+  margin-top: 5%;
+}
+
+/* Timer properties */
+.timer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 /* Display */
-.digit {
-  font-size: 100px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
+.digit,
 .txt {
-  font-size: 100px;
+  font-size: 6rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  align-self: center;
-  justify-self: center;
 }
 
 /* Buttons */
 .buttons {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   gap: 10px;
   margin-left: 10px;
+  margin-top: auto;
+  margin-bottom: 15px;
 }
 
 .btn {
   font-size: 25px;
+  font-size: 1.5rem;
   border: none;
-}
-
-/* Hide elements */
-#count,
-#stop {
-  display: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 /* Button hover options */
@@ -57,6 +62,60 @@
 #reset:hover {
   color: gray;
 }
+
+/* Hide elements */
+#count,
+#stop {
+  display: none;
+}
+
+/* New button */
+.new-button {
+  display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* flex-direction: column; */
+  /* margin-top: 10px; */
+}
+
+.new-category-button {
+  /* margin-left: 45%; */
+  border: 0;
+  font-size: 1.5rem;
+  /* padding: 5px; */
+  cursor: pointer;
+  /* 
+  TODO 
+  Add styling, hover actions, cursor, etc 
+  Fix how it looks to look cool but fit the theme
+  */
+}
+
+/* Not needed - inline html styles for cloning in JS */
+/* Categories */
+/* .categories {
+  display: flex;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.color-icon {
+  align-self: center;
+  width: 20px;
+  height: 20px;
+  border: 1px solid red;
+  border-radius: 50%;
+  background-color: red;
+}
+
+.category-name {
+  font-size: 1rem;
+  padding: 0.5%;
+  border-radius: 5px;
+} */
+
+/* .category {
+} */
 
 /* Media Queries for responsiveness */
 @media (max-width: 768px) {

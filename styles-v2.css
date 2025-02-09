@@ -1,0 +1,123 @@
+* {
+  background-color: rgb(58, 57, 57);
+  padding: 0;
+  margin: 0;
+  color: white;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  height: 100%; /* Ensure it spans the height of the parent (body) */
+  width: 100vw; /* Full width of the viewport */
+}
+
+.timer,
+.categories {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid gray; /* Optional visual aid */
+  font-size: 1.2rem;
+}
+
+/* Display */
+.digit {
+  font-size: 100px;
+}
+
+.txt {
+  font-size: 100px;
+  align-self: center;
+  justify-self: center;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-left: 10px;
+}
+
+.btn {
+  font-size: 25px;
+  border: none;
+}
+
+/* Categories */
+.categories {
+  grid-column-start: 2;
+}
+
+/* Hide elements */
+#count,
+#stop {
+  display: none;
+}
+
+/* Button hover options */
+#start:hover {
+  color: yellowgreen;
+}
+
+#stop:hover {
+  color: rgba(255, 0, 0, 0.63);
+}
+
+#reset:hover {
+  color: gray;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .digit,
+  .txt {
+    font-size: 70px;
+  }
+
+  .btn {
+    font-size: 20px;
+  }
+
+  .buttons {
+    margin-left: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .digit,
+  .txt {
+    font-size: 50px;
+  }
+
+  .btn {
+    font-size: 18px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+@media (max-width: 320px) {
+  .digit,
+  .txt {
+    font-size: 40px;
+  }
+
+  .btn {
+    font-size: 16px;
+  }
+}

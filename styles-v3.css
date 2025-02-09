@@ -1,0 +1,133 @@
+/* 
+Cloned from the original
+Everything stacked down the center
+*/
+
+/* Global options */
+* {
+  background-color: rgb(58, 57, 57);
+  padding: 0;
+  margin: 0;
+  color: white;
+  /* TODO add font */
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 0fr, 1fr, 0fr;
+  grid-template-rows: 1fr, 1fr;
+}
+
+/* Timer properties */
+.timer {
+  grid-column-start: 2;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  /* height: 100vh; */
+  margin-top: 5%;
+}
+
+/* Display */
+.digit {
+  font-size: 100px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.txt {
+  font-size: 100px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  /* align-self: center; */
+  /* justify-self: center; */
+}
+
+/* Buttons */
+/* .buttons {
+  grid-column-start: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-left: 10px;
+}
+
+.btn {
+  grid-column-start: 3;
+  font-size: 25px;
+  border: none;
+} */
+
+/* Categories */
+.categories {
+  grid-column-start: 2;
+  grid-row-start: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+[id^="color-icon"]:hover {
+  background-color: red;
+}
+
+/* Hide elements */
+#count,
+#stop {
+  display: none;
+}
+
+/* Button hover options */
+#start:hover {
+  color: yellowgreen;
+}
+
+#stop:hover {
+  color: rgba(255, 0, 0, 0.63);
+}
+
+#reset:hover {
+  color: gray;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .digit,
+  .txt {
+    font-size: 70px;
+  }
+
+  .btn {
+    font-size: 20px;
+  }
+
+  .buttons {
+    margin-left: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .digit,
+  .txt {
+    font-size: 50px;
+  }
+
+  .btn {
+    font-size: 18px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+@media (max-width: 320px) {
+  .digit,
+  .txt {
+    font-size: 40px;
+  }
+
+  .btn {
+    font-size: 16px;
+  }
+}
