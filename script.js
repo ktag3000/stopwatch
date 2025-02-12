@@ -104,6 +104,10 @@ newCategory.addEventListener("click", function () {
     clonedCategoryInput.value = "";
 
     categoryID++;
+
+    if (categoryID === 7) {
+      newCategory.style.display = "none";
+    }
   } else {
     // Stop after 7 categories
   }
@@ -156,6 +160,10 @@ document.addEventListener("click", (e) => {
 
       // Decrease Id to allow another category to be created
       categoryID--;
+
+      if (categoryID <= 7) {
+        newCategory.style.display = "block";
+      }
     }
   }
 });
