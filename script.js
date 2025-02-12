@@ -7,7 +7,7 @@ let resetBtn = document.getElementById("reset");
 
 // New categories
 let newCategory = document.querySelector(".new-category-button");
-let categoryID = 0;
+let categoryID = 1;
 let category0 = document.getElementById("category0");
 
 // Color array
@@ -74,43 +74,32 @@ For each clone set the color to match the colorArray and clear the contents on t
 */
 
 newCategory.addEventListener("click", function () {
-  // First click - show category0
-  if (categoryID === 0) {
-    category0.style.display = "flex";
-    categoryID++;
-  } else if (categoryID < 7) {
-    // Create new categories and increase categoryID
-    let firstCategory = category0;
-    let clonedCategory = firstCategory.cloneNode(true); // Create deep clone
-    const parentElement = document.querySelector(".category-container");
+  // Create new categories and increase categoryID
+  let firstCategory = category0;
+  let clonedCategory = firstCategory.cloneNode(true); // Create deep clone
+  clonedCategory.style.display = "flex";
+  const parentElement = document.querySelector(".category-container");
 
-    // Place new category under the previous, within the category-container
-    parentElement.appendChild(clonedCategory);
+  // Place new category under the previous, within the category-container
+  parentElement.appendChild(clonedCategory);
 
-    // Set's the id of the new category
-    clonedCategory.id = `category${categoryID}`;
+  // Set's the id of the new category
+  clonedCategory.id = `category${categoryID}`;
 
-    // Accessing color icon and hover icon properly
-    let clonedColorIcon = clonedCategory.querySelector(".color-icon");
-    let clonedCategoryInput = clonedCategory.querySelector(".category-input");
+  // Accessing color icon and hover icon properly
+  let clonedColorIcon = clonedCategory.querySelector(".color-icon");
+  let clonedCategoryInput = clonedCategory.querySelector(".category-input");
 
-    // Set color-icon style and ID
-    clonedColorIcon.id = `color-icon${categoryID}`;
-    clonedColorIcon.style.backgroundColor = colorArray[categoryID];
-    clonedColorIcon.style.border = `1px solid ${colorArray[categoryID]}`;
+  // Set color-icon style and ID
+  clonedColorIcon.id = `color-icon${categoryID}`;
+  // clonedColorIcon.style.backgroundColor = colorArray[categoryID];
+  // clonedColorIcon.style.border = `1px solid ${colorArray[categoryID]}`;
 
-    // Set category input id and reset value
-    clonedCategoryInput.id = `category-input${categoryID}`;
-    clonedCategoryInput.value = "";
+  // Set category input id and reset value
+  clonedCategoryInput.id = `category-input${categoryID}`;
+  clonedCategoryInput.value = "";
 
-    categoryID++;
-
-    if (categoryID === 7) {
-      newCategory.style.display = "none";
-    }
-  } else {
-    // Stop after 7 categories
-  }
+  categoryID++;
 });
 
 // ======================
@@ -137,8 +126,8 @@ document.addEventListener("mouseout", function (e) {
     const targetId = e.target.id;
     const color = targetId.slice(-1);
 
-    e.target.style.backgroundColor = colorArray[color];
-    e.target.style.border = colorArray[color];
+    e.target.style.backgroundColor = "white";
+    e.target.style.border = "white";
     e.target.style.cursor = "pointer";
     e.target.style.fontSize = "";
     e.target.style.alignItems = "";
@@ -157,13 +146,6 @@ document.addEventListener("click", (e) => {
     // Remove the category container if it exists
     if (categoryToRemove) {
       categoryToRemove.remove();
-
-      // Decrease Id to allow another category to be created
-      categoryID--;
-
-      if (categoryID <= 7) {
-        newCategory.style.display = "block";
-      }
     }
   }
 });
