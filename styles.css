@@ -43,7 +43,6 @@ body {
 }
 
 .btn {
-  font-size: 25px;
   font-size: 1.5rem;
   border: none;
   cursor: pointer;
@@ -78,6 +77,34 @@ body {
   /* margin-top: 10px; */
 }
 
+.category {
+  display: flex;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.category-btn {
+  font-size: 1rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.category-input {
+  font-size: 1rem;
+  padding: 0.5%;
+  border-radius: 5px;
+}
+
+.color-icon {
+  display: flex;
+  align-self: center;
+  width: 20px;
+  height: 20px;
+  border: 1px solid white;
+  border-radius: 50%;
+  background-color: white;
+  position: relative;
+}
+
 .new-category-button {
   /* margin-left: 45%; */
   border: 0;
@@ -89,6 +116,14 @@ body {
   Add styling, hover actions, cursor, etc 
   Fix how it looks to look cool but fit the theme
   */
+}
+
+.color-icon:hover {
+  color: yellowgreen;
+}
+
+.category-input:hover {
+  background-color: purple;
 }
 
 /* Not needed - inline html styles for cloning in JS */

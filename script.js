@@ -67,11 +67,6 @@ resetBtn.addEventListener("click", function () {
 // =============================
 // Create new categories
 // =============================
-/*
-On the first click, show the main category that is written in the html file.
-On the subsequent clicks, create clones where the id changes to match the increase in categoryID.
-For each clone set the color to match the colorArray and clear the contents on the input
-*/
 
 newCategory.addEventListener("click", function () {
   // Create new categories and increase categoryID
@@ -86,14 +81,12 @@ newCategory.addEventListener("click", function () {
   // Set's the id of the new category
   clonedCategory.id = `category${categoryID}`;
 
-  // Accessing color icon and hover icon properly
+  // Accessing color icon and input
   let clonedColorIcon = clonedCategory.querySelector(".color-icon");
   let clonedCategoryInput = clonedCategory.querySelector(".category-input");
 
-  // Set color-icon style and ID
+  // Set color-icon ID
   clonedColorIcon.id = `color-icon${categoryID}`;
-  // clonedColorIcon.style.backgroundColor = colorArray[categoryID];
-  // clonedColorIcon.style.border = `1px solid ${colorArray[categoryID]}`;
 
   // Set category input id and reset value
   clonedCategoryInput.id = `category-input${categoryID}`;
@@ -107,35 +100,35 @@ newCategory.addEventListener("click", function () {
 // ======================
 
 // Event delegation for hover effect on color icons
-document.addEventListener("mouseover", function (e) {
-  if (e.target.classList.contains("color-icon")) {
-    e.target.style.backgroundColor = "transparent";
-    e.target.style.border = "none";
-    e.target.style.cursor = "pointer";
-    e.target.style.fontSize = "20px";
-    e.target.style.alignItems = "center";
-    e.target.style.justifyContent = "center";
-    e.target.style.color = "red";
-    e.target.innerHTML = "X";
-  }
-});
+// document.addEventListener("mouseover", function (e) {
+//   if (e.target.classList.contains("color-icon")) {
+//     e.target.style.backgroundColor = "transparent";
+//     e.target.style.border = "none";
+//     e.target.style.cursor = "pointer";
+//     e.target.style.fontSize = "20px";
+//     e.target.style.alignItems = "center";
+//     e.target.style.justifyContent = "center";
+//     e.target.style.color = "red";
+//     e.target.innerHTML = "X";
+//   }
+// });
 
 // Event delegation for mouseout to reset styles when no longer hovering
-document.addEventListener("mouseout", function (e) {
-  if (e.target.classList.contains("color-icon")) {
-    const targetId = e.target.id;
-    const color = targetId.slice(-1);
+// document.addEventListener("mouseout", function (e) {
+//   if (e.target.classList.contains("color-icon")) {
+//     const targetId = e.target.id;
+//     const color = targetId.slice(-1);
 
-    e.target.style.backgroundColor = "white";
-    e.target.style.border = "white";
-    e.target.style.cursor = "pointer";
-    e.target.style.fontSize = "";
-    e.target.style.alignItems = "";
-    e.target.style.justifyContent = "";
-    e.target.style.color = "";
-    e.target.innerHTML = "";
-  }
-});
+//     e.target.style.backgroundColor = "white";
+//     e.target.style.border = "white";
+//     e.target.style.cursor = "pointer";
+//     e.target.style.fontSize = "";
+//     e.target.style.alignItems = "";
+//     e.target.style.justifyContent = "";
+//     e.target.style.color = "";
+//     e.target.innerHTML = "";
+//   }
+// });
 
 // Event delegation for deleting categories when clicking on a color icon
 document.addEventListener("click", (e) => {
