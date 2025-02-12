@@ -54,7 +54,15 @@ body {
   color: yellowgreen;
 }
 
+.start-btn:hover {
+  color: yellowgreen;
+}
+
 #stop:hover {
+  color: rgba(255, 0, 0, 0.63);
+}
+
+.stop-btn:hover {
   color: rgba(255, 0, 0, 0.63);
 }
 
@@ -62,9 +70,17 @@ body {
   color: gray;
 }
 
+.reset-btn:hover {
+  color: gray;
+}
+
 /* Hide elements */
 #count,
 #stop {
+  display: none;
+}
+
+.stop-btn {
   display: none;
 }
 
@@ -92,6 +108,7 @@ body {
   font-size: 1rem;
   padding: 0.5%;
   border-radius: 5px;
+  border-style: solid;
 }
 
 .color-icon {
@@ -103,6 +120,11 @@ body {
   border-radius: 50%;
   background-color: white;
   position: relative;
+
+  font-size: 20px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 .new-category-button {
@@ -119,38 +141,9 @@ body {
 }
 
 .color-icon:hover {
-  color: yellowgreen;
+  background-color: transparent;
+  border-color: transparent;
 }
-
-.category-input:hover {
-  background-color: purple;
-}
-
-/* Not needed - inline html styles for cloning in JS */
-/* Categories */
-/* .categories {
-  display: flex;
-  margin-top: 20px;
-  gap: 10px;
-}
-
-.color-icon {
-  align-self: center;
-  width: 20px;
-  height: 20px;
-  border: 1px solid red;
-  border-radius: 50%;
-  background-color: red;
-}
-
-.category-name {
-  font-size: 1rem;
-  padding: 0.5%;
-  border-radius: 5px;
-} */
-
-/* .category {
-} */
 
 /* Media Queries for responsiveness */
 @media (max-width: 768px) {

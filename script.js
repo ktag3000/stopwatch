@@ -10,17 +10,6 @@ let newCategory = document.querySelector(".new-category-button");
 let categoryID = 1;
 let category0 = document.getElementById("category0");
 
-// Color array
-const colorArray = [
-  "red",
-  "orange",
-  "yellow",
-  "green",
-  "blue",
-  "indigo",
-  "violet",
-];
-
 // Create Web Worker
 let worker = new Worker("worker.js");
 
@@ -131,14 +120,14 @@ newCategory.addEventListener("click", function () {
 // });
 
 // Event delegation for deleting categories when clicking on a color icon
-document.addEventListener("click", (e) => {
-  // Check if the clicked element is inside a color icon
-  if (e.target.closest(".color-icon")) {
-    const categoryToRemove = e.target.closest(".category"); // Find the closest parent category container
+// document.addEventListener("click", (e) => {
+//   // Check if the clicked element is inside a color icon
+//   if (e.target.closest(".color-icon")) {
+//     const categoryToRemove = e.target.closest(".category"); // Find the closest parent category container
 
-    // Remove the category container if it exists
-    if (categoryToRemove) {
-      categoryToRemove.remove();
-    }
-  }
-});
+//     // Remove the category container if it exists
+//     if (categoryToRemove) {
+//       categoryToRemove.remove();
+//     }
+//   }
+// });
